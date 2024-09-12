@@ -1,0 +1,7 @@
+Instale a extensão "REST Client" para executar as requisições abaixo:
+###
+
+POST http://localhost:3333/api/login/
+Content-Type: application/json
+###
+

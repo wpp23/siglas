@@ -1,0 +1,14 @@
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 56vh;
+    background-image: linear-gradient(to bottom, #F4F2E5, #ffffff);
+    background-repeat: no-repeat;
+    border-top-left-radius: 100px; 
+    border-top-right-radius: 100px;
+    border-spacing: 10px;
+}
+
+.br-footer {
+    margin-top: auto;
+}

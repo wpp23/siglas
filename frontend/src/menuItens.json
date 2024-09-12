@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "icon": "list",
+        "name": "Cadastro",
+        "list": [
+        {
+            "icon": "chalkboard",
+            "name": "Siglas",
+            "target": "",
+            "url": "/sigla"
+        },
+        {
+            "icon": "user",
+            "name": "Pessoas",
+            "target": "",
+            "url": ""
+        },
+        {
+            "icon": "users",
+            "name": "Equipes/Times",
+            "target": "",
+            "url": ""
+        },
+        {
+            "icon": "file-signature",
+            "name": "Contratos/Perfis",
+            "target": "",
+            "url": ""
+        }
+    ]
+    },
+    {
+        "id": 2,
+        "icon": "list",
+        "name": "Painéis",
+        "list": [
+        {
+            "icon": "share-square",
+            "name": "Painel Pessoas",
+            "target": "",
+            "url": "/painelpessoas"
+        }
+    ]
+    },
+    {
+        "id": 3,
+        "icon": "list",
+        "name": "Consultas Olinda",
+        "list": [
+        {
+            "icon": "share-square",
+            "name": "Recursos",
+            "target": "_blank",
+            "url": "https://olinda.mec.gov.br/olinda-ide/servico/SIGLAS/versao/v1/aplicacao#!/recursos"
+        }
+    ]
+    },
+    {
+        "id": 4,
+        "icon": "cog",
+        "name": "Configuração",
+        "list": [
+        {
+            "icon": "clipboard-list",
+            "name": "Áreas Responsáveis",
+            "target": "",
+            "url": "/AreaResponsavel"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Tipos de Nível Perfil",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Tecnologias",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Bancos de Dados",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Ambientes Bancos de Dados",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Tipos de Siglas",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Tipos de Tecnologias",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Tipos de URLs",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Tipos de Gestores",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "clipboard-list",
+            "name": "Tipos de Situações",
+            "target": "",
+            "url": "/"
+        }
+    ]
+    },
+    {
+        "id": 5,
+        "icon": "users",
+        "name": "Administração",
+        "list": [
+        {
+            "icon": "user",
+            "name": "Usuários",
+            "target": "",
+            "url": "/usuario"
+        },
+        {
+            "icon": "sliders-h",
+            "name": "Perfis de Usuários",
+            "target": "",
+            "url": "/"
+        },
+        {
+            "icon": "copy",
+            "name": "Funcionalidades",
+            "target": "",
+            "url": "/"
+        }
+    ]
+    }
+
+]

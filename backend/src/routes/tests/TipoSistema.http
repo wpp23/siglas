@@ -1,0 +1,27 @@
+Instale a extensão "REST Client" para executar as requisições abaixo:
+###
+
+GET http://localhost:3333/api/tiposistema/
+###
+
+GET http://localhost:3333/api/tiposistema/2
+###
+
+POST http://localhost:3333/api/tiposistema/
+Content-Type: application/json
+
+{
+    "descrtiposistema": "WEB Front+Back"
+}
+###
+
+PUT http://localhost:3333/api/tiposistema/1
+Content-Type: application/json
+
+{
+    "descrtiposistema": "WEb Front+Back"
+}
+###
+
+DELETE http://localhost:3333/api/tiposistema/3
+Content-Type: application/json

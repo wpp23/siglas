@@ -1,0 +1,40 @@
+version: '3.8'
+services:  
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    expose:
+      - 3333
+    ports:
+      - 8081:3333
+    image: app:siglas-backend
+    restart: always
+    networks:
+      - redelocalhost
+    container_name: siglas-backend
+  
+  app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    expose:
+      - 3000
+    ports:
+      - 8080:3000
+    image: app:siglas-frontend
+    restart: always
+    networks:
+      - redelocalhost
+    container_name: siglas-frontend
+    command: npm run dev
+    depends_on:
+      - api
+ 
+networks:
+    redelocalhost:
+      driver: bridge  
+      ipam:
+          config:
+              - subnet: 172.20.0.0/16
+              

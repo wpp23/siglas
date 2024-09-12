@@ -1,0 +1,34 @@
+Instale a extensão "REST Client" para executar as requisições abaixo:
+###
+
+GET http://localhost:3333/api/usuario/
+###
+
+GET http://localhost:3333/api/usuario/1
+###
+
+POST http://localhost:3333/api/usuario/
+Content-Type: application/json
+
+{
+    "login":"usuarioteste11",
+    "indbloqueado":false,
+    "pwd":"senha123",
+    "datacriacao":"2023-03-21"
+}
+###
+
+PUT http://localhost:3333/api/usuario/3
+Content-Type: application/json
+
+{
+    "login":"usuarioalterado",
+    "indbloqueado":true,
+    "pwd":"senha456",
+    "datacriacao":"2023-03-21T03:00:00.000Z"
+}
+
+###
+
+DELETE http://localhost:3333/api/usuario/3
+Content-Type: application/json

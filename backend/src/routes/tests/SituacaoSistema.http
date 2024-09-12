@@ -1,0 +1,27 @@
+Instale a extensão "REST Client" para executar as requisições abaixo:
+###
+
+GET http://localhost:3333/api/situacaosistema/
+###
+
+GET http://localhost:3333/api/situacaosistema/3
+###
+
+POST http://localhost:3333/api/situacaosistema/
+Content-Type: application/json
+
+{
+    "descrsituacao": "Consulta"
+}
+###
+
+PUT http://localhost:3333/api/situacaosistema/3
+Content-Type: application/json
+
+{
+    "descrsituacao": "ATIVO-EM TESTE"
+}
+###
+
+DELETE http://localhost:3333/api/situacaosistema/4
+Content-Type: application/json

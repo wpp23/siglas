@@ -1,6 +1,6 @@
 import { sql } from '../schema/db.js';
 
-export default class SituacaoSistemaModel {
+export default class SituacaoSiglaModel {
 
   constructor() { }
 
@@ -10,7 +10,7 @@ export default class SituacaoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`SELECT * FROM SituacaoSistema`;
+      strQuery = sql`SELECT * FROM situacaosigla`;
 
       strResult = await strQuery;
 
@@ -32,7 +32,7 @@ export default class SituacaoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`SELECT * FROM SituacaoSistema WHERE idsituacaosistema = ${req.params.id}`;
+      strQuery = sql`SELECT * FROM situacaosigla WHERE idsituacaosigla = ${req.params.id}`;
 
       strResult = await strQuery;
 
@@ -54,10 +54,10 @@ export default class SituacaoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`INSERT INTO SituacaoSistema 
-                      (descrsituacaosistema) 
+      strQuery = sql`INSERT INTO situacaosigla 
+                      (descrsituacaosigla) 
                       VALUES (
-                      ${req.body.descrsituacao}) RETURNING idsituacaosistema id`;
+                      ${req.body.descrsituacao}) RETURNING idsituacaosigla id`;
 
       strResult = await strQuery;
 
@@ -79,10 +79,10 @@ export default class SituacaoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`UPDATE SituacaoSistema SET
-                          descrsituacaosistema = ${req.body.descrsituacao}
+      strQuery = sql`UPDATE situacaosigla SET
+                          descrsituacaosigla = ${req.body.descrsituacaosigla}
                       WHERE 
-                          idsituacaosistema = ${req.params.id}`;
+                          idsituacaosigla = ${req.params.id}`;
 
       strResult = await strQuery;
 
@@ -104,7 +104,7 @@ export default class SituacaoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`DELETE FROM SituacaoSistema WHERE idsituacaosistema = ${req.params.id}`;
+      strQuery = sql`DELETE FROM situacaosigla WHERE idsituacaosigla = ${req.params.id}`;
 
       strResult = await strQuery;
 

@@ -28,5 +28,7 @@ declare namespace JSX {
     'br-breadcrumb': any
     'br-scrim': any
     'br-modal': any
+    'br-tab': any
+    'br-tab-item': any
   }
 }

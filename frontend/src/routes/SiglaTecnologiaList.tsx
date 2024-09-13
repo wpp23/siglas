@@ -4,40 +4,28 @@ import TableGrid from '../components/TableGrid';
 import Loading from '../components/Loading';
 import {AuthContext} from '../contexts/AuthContext';
 import requestWithToken from '../services/apiService';
-import { Link } from 'react-router-dom';
 
-export default function SiglaList() {
+export default function SiglaTecnologiaList({title}) {
 
-  const {auth, token} = useContext(AuthContext); 
   const navigate = useNavigate();
 
-  //Verifica se está autenticado
-  if (!auth){
-    navigate("/login");
-  }
-
   // Informe aqui o título do Grid.
-  const tituloLista = "Siglas - Sistemas, Portais, Painéis,..."
+  const tituloLista = title;
 
   // Informe aqui a URL de consulta dos itens que serão listados no Grid.
-  const urlLista = "sigla"
+  const urlLista = "https://jsonplaceholder.typicode.com/posts"
   
   // Informe aqui a rota que será usada para edição. Ex: https://localhost/funcionalidade1/id a rota será "funcionalidade1".
-  const rota = "sigla"
-  const tituloRota = "Siglas"
+  const rota = "siglatecnologia"
+  const tituloRota = "Siglas-Tecnologias"
   const qtdeLinhasGrid = 5
   
   // Informe aqui os nomes dos títulos das colunas e tamanho no Grid.
   // O identificador (id) não precisa ser informado, mas precisa existir na lista de Itens.
   // O total de colunas é col-12, ou seja, a soma das colunas tem que dar 12. Exemplo: (col-3, col-6, col-3)
   const colunas = [
-    { titulo: 'ID', campo: 'idsigla', tamanho: 'col-1', pesquisa: false  },
-    { titulo: 'Sigla', campo: 'sigla', tamanho: 'col-1', pesquisa: true  },   
-    { titulo: 'Descrição', campo: 'descricaosigla', tamanho: 'col-6', pesquisa: true  },   
-    { titulo: 'Sigla Pai', campo: 'siglarelacionada', tamanho: 'col-1', pesquisa: false  },
-    { titulo: 'Tipo', campo: 'descrtiposigla', tamanho: 'col-2', pesquisa: true  }, 
-    { titulo: 'Área Gestora', campo: 'siglaarea', tamanho: 'col-1', pesquisa: true  },   
-    { titulo: 'Situação', campo: 'descrsituacaosigla', tamanho: 'col-1', pesquisa: true  }
+    { titulo: 'ID', campo: 'id', tamanho: 'col-1', pesquisa: false  },
+    { titulo: 'Tecnologia', campo: 'title', tamanho: 'col-11', pesquisa: true  }
   ]
 
   // Informe aqui os botões (ações) que serão exibidos no GRID.
@@ -45,7 +33,7 @@ export default function SiglaList() {
     { 
       label: 'Editar', 
       icone: 'fa-edit',
-      acao: (id) => navigate(`/Sigla/${id}`)
+      acao: (id) => navigate(`/SiglaTecnologia/${id}`)
     }
   ];
    
@@ -69,6 +57,13 @@ export default function SiglaList() {
   const [isLoading, SetIsLoading] = useState(true);
   const [error, SetError] = useState<string | null>(null);
   
+  const { auth, token } = useContext(AuthContext); // Get the token
+
+  //Verifica se está autenticado
+  if (!auth){
+    navigate("/login");
+  }
+
   //Recupera a lista da URL informada na urlLista.
   useEffect(()=>{
       const FetchItens = async() => {
@@ -121,14 +116,6 @@ export default function SiglaList() {
                   {error && (
                     <br-message state="danger" title="Atenção." show-icon="true" message={error}></br-message>
                   )}
-
-                <nav className="br-breadcrumb" aria-label="Breadcrumbs">
-                  <ol className="crumb-list" role="list">
-                    <li className="crumb home"><Link to="/" className="br-button circle"><span className="sr-only">Página inicial</span><i className="fas fa-home"></i></Link></li>
-                    <li className="crumb" data-active="active"><i className="icon fas fa-chevron-right"></i><span tabIndex={0} aria-current="page">{tituloRota}</span>
-                    </li>
-                  </ol>
-                </nav>
 
                   {isLoading ? (
                     <Loading />

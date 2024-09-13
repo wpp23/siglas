@@ -1,9 +1,9 @@
 import express from "express";
 import AuthController from "../Controllers/AuthController.js";
-import SistemaSigla from "../controllers/SistemaSiglaController.js";
+import Sigla from "../Controllers/SiglaController.js";
 import AreaResponsavel from "../controllers/AreaResponsavelController.js";
-import TipoSistema from "../controllers/TipoSistemaController.js";
-import SituacaoSistema from "../controllers/SituacaoSistemaController.js";
+import TipoSigla from "../controllers/TipoSiglaController.js";
+import SituacaoSigla from "../controllers/SituacaoSiglaController.js";
 import Usuario from "../Controllers/UsuarioController.js";
 
 
@@ -23,13 +23,13 @@ router.get("/api", (req, res)=>{
 //Rota de Authentication
 router.post("/api/login", AuthController.login);
 
-//Rotas de SistemaSigla
-router.get("/api/sistemasigla", AuthController.checkToken, SistemaSigla.getAll);
-router.get("/api/sistemasigla?", AuthController.checkToken, SistemaSigla.getByFilter);
-router.get("/api/sistemasigla/:id", AuthController.checkToken, SistemaSigla.getById);
-router.post("/api/sistemasigla", AuthController.checkToken, SistemaSigla.post);
-router.put("/api/sistemasigla/:id", AuthController.checkToken, SistemaSigla.put);
-router.delete("/api/sistemasigla/:id", AuthController.checkToken, SistemaSigla.del);
+//Rotas de Sigla
+router.get("/api/Sigla", AuthController.checkToken, Sigla.getAll);
+router.get("/api/Sigla?", AuthController.checkToken, Sigla.getByFilter);
+router.get("/api/Sigla/:id", AuthController.checkToken, Sigla.getById);
+router.post("/api/Sigla", AuthController.checkToken, Sigla.post);
+router.put("/api/Sigla/:id", AuthController.checkToken, Sigla.put);
+router.delete("/api/Sigla/:id", AuthController.checkToken, Sigla.del);
 
 //Rotas de AreaResponsavel
 router.get("/api/arearesponsavel", AuthController.checkToken, AreaResponsavel.getAll);
@@ -38,19 +38,19 @@ router.post("/api/arearesponsavel", AuthController.checkToken, AreaResponsavel.p
 router.put("/api/arearesponsavel/:id", AuthController.checkToken, AreaResponsavel.put);
 router.delete("/api/arearesponsavel/:id", AuthController.checkToken, AreaResponsavel.del);
 
-//Rotas de TipoSistema
-router.get("/api/tiposistema", TipoSistema.getAll);
-router.get("/api/tiposistema/:id", TipoSistema.getById);
-router.post("/api/tiposistema", TipoSistema.post);
-router.put("/api/tiposistema/:id", TipoSistema.put);
-router.delete("/api/tiposistema/:id", TipoSistema.del);
+//Rotas de TipoSigla
+router.get("/api/tipoSigla", TipoSigla.getAll);
+router.get("/api/tipoSigla/:id", TipoSigla.getById);
+router.post("/api/tipoSigla", TipoSigla.post);
+router.put("/api/tipoSigla/:id", TipoSigla.put);
+router.delete("/api/tipoSigla/:id", TipoSigla.del);
 
-//Rotas de SituacaoSistema
-router.get("/api/situacaosistema", SituacaoSistema.getAll);
-router.get("/api/situacaosistema/:id", SituacaoSistema.getById);
-router.post("/api/situacaosistema", SituacaoSistema.post);
-router.put("/api/situacaosistema/:id", SituacaoSistema.put);
-router.delete("/api/situacaosistema/:id", SituacaoSistema.del);
+//Rotas de SituacaoSigla
+router.get("/api/situacaoSigla", SituacaoSigla.getAll);
+router.get("/api/situacaoSigla/:id", SituacaoSigla.getById);
+router.post("/api/situacaoSigla", SituacaoSigla.post);
+router.put("/api/situacaoSigla/:id", SituacaoSigla.put);
+router.delete("/api/situacaoSigla/:id", SituacaoSigla.del);
 
 //Rotas de seg_Usuarios
 router.get("/api/usuario", AuthController.checkToken, Usuario.getAll);

@@ -1,10 +1,10 @@
-import SituacaoSistema from "../models/SituacaoSistemaModel.js";
+import SituacaoSigla from "../models/SituacaoSiglaModel.js";
 
-export default class SituacaoSistemaController {
+export default class SituacaoSiglaController {
   
   static async getAll(req, res) {
     try {
-      const result = await SituacaoSistema.getAll(req, res);
+      const result = await SituacaoSigla.getAll(req, res);
       res.status(200).json(result);
     } catch (error) {
       res.status(500).json({ error: error.toString() });
@@ -13,7 +13,7 @@ export default class SituacaoSistemaController {
 
   static async getById(req, res) {
     try {
-      const result = await SituacaoSistema.getById(req, res);
+      const result = await SituacaoSigla.getById(req, res);
       res.status(200).json(result);
     } catch (error) {
       res.status(500).json({ error: error.toString() });
@@ -22,7 +22,7 @@ export default class SituacaoSistemaController {
 
   static async post(req, res) {
     try {
-      const result = await SituacaoSistema.post(req, res);
+      const result = await SituacaoSigla.post(req, res);
       res.status(201).json(result);
     } catch (error) {
       res.status(500).json({ error: error.toString() });
@@ -31,7 +31,7 @@ export default class SituacaoSistemaController {
 
   static async put(req, res) {
     try {
-      const result = await SituacaoSistema.put(req, res);
+      const result = await SituacaoSigla.put(req, res);
       res.status(204).json(result);
     } catch (error) {
       res.status(500).json({ error: error.toString() });
@@ -40,7 +40,7 @@ export default class SituacaoSistemaController {
 
   static async del(req, res) {
     try {
-      const result = await SituacaoSistema.del(req, res);
+      const result = await SituacaoSigla.del(req, res);
       res.status(204).json(result);
     } catch (error) {
       res.status(500).json({ error: error.toString() });

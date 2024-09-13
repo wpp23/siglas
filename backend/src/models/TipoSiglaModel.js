@@ -1,6 +1,6 @@
 import { sql } from '../schema/db.js';
 
-export default class TipoSistemaModel {
+export default class TipoSiglaModel {
 
   constructor() { }
 
@@ -11,7 +11,7 @@ export default class TipoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`SELECT * FROM TipoSistema`;
+      strQuery = sql`SELECT * FROM tiposigla`;
 
       strResult = await strQuery;
 
@@ -33,7 +33,7 @@ export default class TipoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`SELECT * FROM TipoSistema WHERE idtiposistema = ${req.params.id}`;
+      strQuery = sql`SELECT * FROM tiposigla WHERE idtiposigla = ${req.params.id}`;
 
       strResult = await strQuery;
 
@@ -55,10 +55,10 @@ export default class TipoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`INSERT INTO TipoSistema 
-                      (descrtiposistema) 
+      strQuery = sql`INSERT INTO tiposigla 
+                      (descrtiposigla) 
                       VALUES (
-                      ${req.body.descrtiposistema}) RETURNING idtiposistema id`;
+                      ${req.body.descrtipoSigla}) RETURNING idtiposigla id`;
 
       strResult = await strQuery;
 
@@ -80,10 +80,10 @@ export default class TipoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`UPDATE TipoSistema SET
-                          descrtiposistema = ${req.body.descrtiposistema}
+      strQuery = sql`UPDATE tiposigla SET
+                          descrtiposigla = ${req.body.descrtipoSigla}
                       WHERE 
-                          idtiposistema = ${req.params.id}`;
+                          idtiposigla = ${req.params.id}`;
 
       strResult = await strQuery;
 
@@ -105,7 +105,7 @@ export default class TipoSistemaModel {
       let strResult = "";
       let strQuery = "";
 
-      strQuery = sql`DELETE FROM TipoSistema WHERE idtiposistema = ${req.params.id}`;
+      strQuery = sql`DELETE FROM tiposigla WHERE idtiposigla = ${req.params.id}`;
 
       strResult = await strQuery;
 

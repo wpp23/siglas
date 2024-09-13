@@ -1,0 +1,64 @@
+Instale a extensão "REST Client" para executar as requisições abaixo:
+###
+
+
+
+GET http://localhost:3333/api/Sigla/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3MjYyNjMwODEsImV4cCI6MTcyNjI2NjY4MX0.KUA3YFF3V_gNr9JXTa_jF2pSbPWdnwP1h6yJjhA5Hzw
+###
+
+GET http://localhost:3333/api/Sigla/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3MjYyNjI2NzYsImV4cCI6MTcyNjI2NjI3Nn0.v0FTsBA8Y2Z2X8ZVKbzAKex4bRrGkM_Y5fxamyQcf0g
+###
+
+GET http://localhost:3333/api/Sigla?idtipoSigla=2&idsituacaoSigla=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEsImlhdCI6MTcyMDE0MDc2NywiZXhwIjoxNzIwMTQ0MzY3fQ.mkV78HcH0iv3DMlglBIbMVbYCiHEONJhbJopawo4Yno
+###
+
+POST http://localhost:3333/api/Sigla/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3MjYyNjMwODEsImV4cCI6MTcyNjI2NjY4MX0.KUA3YFF3V_gNr9JXTa_jF2pSbPWdnwP1h6yJjhA5Hzw
+
+{
+    "sigla": "Teste",
+    "descricaosigla": "teste",
+    "idsiglapai": null,
+    "descrtiposigla": null,
+    "obssigla": null,
+    "dataproducao": null,
+    "datainativacao": null,
+    "idtiposigla": 1,
+    "idarearesponsavel": 1,
+    "idsituacaosigla": 1,
+    "siglacritica": true,
+    "gov_clientid": null,
+    "gov_scopes": null,
+    "gov_redirecturi": null
+}
+###
+
+PUT http://localhost:3333/api/Sigla/35
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEsImlhdCI6MTcyMDE0MDc2NywiZXhwIjoxNzIwMTQ0MzY3fQ.mkV78HcH0iv3DMlglBIbMVbYCiHEONJhbJopawo4Yno
+
+{
+    "sigla": "TESTE10--",
+    "descricaosigla": "Informações sobre Teste10.",
+    "idsiglapai": null,
+    "idtipoSigla": 2,
+    "idarearesponsavel": 1,
+    "idsituacaosigla": 1,
+    "dataproducao": "2024-06-26",
+    "datainativacao": null,
+    "obssigla": "",
+    "siglacritica": false,
+    "gov_clientid": "",
+    "gov_scopes": "",
+    "gov_redirecturi": ""
+}
+###
+
+DELETE http://localhost:3333/api/Sigla/35
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEsImlhdCI6MTcyMDE0MDc2NywiZXhwIjoxNzIwMTQ0MzY3fQ.mkV78HcH0iv3DMlglBIbMVbYCiHEONJhbJopawo4Yno
+

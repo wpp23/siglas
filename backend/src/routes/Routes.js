@@ -5,6 +5,8 @@ import AreaResponsavel from "../controllers/AreaResponsavelController.js";
 import TipoSigla from "../controllers/TipoSiglaController.js";
 import SituacaoSigla from "../controllers/SituacaoSiglaController.js";
 import Usuario from "../Controllers/UsuarioController.js";
+import TecnologiaSigla from "../Controllers/TecnologiaSiglaController.js";
+import VersaoTecnologia from "../Controllers/VersaoTecnologiaController.js";
 
 
 const router = express.Router();
@@ -59,6 +61,19 @@ router.post("/api/usuario", AuthController.checkToken, Usuario.post);
 router.put("/api/usuario/:id", AuthController.checkToken, Usuario.put);
 router.delete("/api/usuario/:id", AuthController.checkToken, Usuario.del);
 
+//Rotas de TecnologiaSigla
+router.get("/api/tecnologiaSigla", AuthController.checkToken, TecnologiaSigla.getAll);
+router.get("/api/tecnologiaSigla/:id", AuthController.checkToken, TecnologiaSigla.getById);
+router.post("/api/tecnologiaSigla", AuthController.checkToken, TecnologiaSigla.post);
+router.put("/api/tecnologiaSigla/:id", AuthController.checkToken, TecnologiaSigla.put);
+router.delete("/api/tecnologiaSigla/:id", AuthController.checkToken, TecnologiaSigla.del);
+
+//Rotas de VersaoTecnologia
+router.get("/api/versaotecnologia", AuthController.checkToken, VersaoTecnologia.getAll);
+router.get("/api/versaotecnologia/:id", AuthController.checkToken, VersaoTecnologia.getById);
+router.post("/api/versaotecnologia", AuthController.checkToken, VersaoTecnologia.post);
+router.put("/api/versaotecnologia/:id", AuthController.checkToken, VersaoTecnologia.put);
+router.delete("/api/versaotecnologia/:id", AuthController.checkToken, VersaoTecnologia.del);
 
 
 export default router;

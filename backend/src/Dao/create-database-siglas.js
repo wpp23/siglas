@@ -271,7 +271,7 @@ CREATE TABLE IF NOT EXISTS situacaosigla (
                                                             idversaotecnologia SERIAL PRIMARY KEY,
                                                             idtecnologia INT NOT NULL,
                                                             numeroversao VARCHAR(100) NOT NULL,
-                                                            indversaodatual BOOLEAN,
+                                                            indversaoatual BOOLEAN,
                                                             FOREIGN KEY (idtecnologia) REFERENCES tecnologia(idtecnologia)
                                                         );
                                                         `
@@ -280,7 +280,7 @@ CREATE TABLE IF NOT EXISTS situacaosigla (
 
                                                             // Insert data into VersaoTecnologia
                                                             sql`
-                                                            INSERT INTO versaotecnologia (idtecnologia, numeroversao, indversaodatual) VALUES 
+                                                            INSERT INTO versaotecnologia (idtecnologia, numeroversao, indversaoatual) VALUES 
                                                             (16, '3.0', TRUE),
                                                             (17, '4.01', FALSE),
                                                             (17, '5', TRUE),
@@ -387,6 +387,71 @@ CREATE TABLE IF NOT EXISTS situacaosigla (
                                                             `
                                                             .then(() => {
                                                                 console.log("versaotecnologia inserida")
+
+                                                                // Create tecnologiasigla
+                                                                sql`
+                                                                CREATE TABLE IF NOT EXISTS tecnologiasigla (
+                                                                    idtecnologiasigla SERIAL PRIMARY KEY,
+                                                                    idsigla INT NOT NULL,
+                                                                    idversaotecnologia INT NOT NULL,
+                                                                    idambientesigla INT NULL,
+                                                                    FOREIGN KEY (idsigla) REFERENCES sigla(idsigla),
+                                                                    FOREIGN KEY (idversaotecnologia) REFERENCES versaotecnologia(idversaotecnologia)
+                                                                );
+                                                                `
+                                                                .then(() => {
+                                                                    console.log("tecnologiasigla criada")
+
+                                                                    console.log("FIM")
+                                                                })
+                                                                .catch(error => {
+                                                                    console.error("Erro ao criar tecnologiasigla:", error);
+
+                                                                })
+
+                                                                // Create v_tecnologiassiglas
+                                                                sql`
+                                                                CREATE VIEW v_TecnologiasSiglas AS
+                                                                SELECT
+                                                                    ts.IDTecnologiaSigla,
+                                                                    tt.IDTipoTecnologia,
+                                                                    tt.DescrTipoTecnologia,
+                                                                    t.IDTecnologia,
+                                                                    t.DescrTecnologia,
+                                                                    COALESCE(t.indTecnologiaUltrapassada::int, 0) AS indTecnologiaUltrapassada,
+                                                                    vt.IDVersaoTecnologia,
+                                                                    COALESCE(vt.NumeroVersao, '') AS NumeroVersao,
+                                                                    COALESCE(vt.IndVersaoAtual::int, 0) AS IndVersaoAtual,
+                                                                    ts.IDSigla,
+                                                                    t.DescrTecnologia || ' (' || COALESCE(vt.NumeroVersao, '') || ')' AS TecnologiaVersao,
+                                                                    tt.DescrTipoTecnologia || 
+                                                                    CASE WHEN COALESCE(t.indTecnologiaUltrapassada::int, 0) = 1 THEN ' (Tec.Ultrapassada)' ELSE '' END ||
+                                                                    ' - ' || 
+                                                                    t.DescrTecnologia || ' (' || COALESCE(vt.NumeroVersao, '') || ')' ||
+                                                                    CASE WHEN COALESCE(vt.IndVersaoAtual::int, 0) = 1 THEN ' (Estável)' ELSE '' END
+                                                                    AS TipoTecnologiaVersao,
+                                                                    t.DescrTecnologia || ' (' || COALESCE(vt.NumeroVersao, '') || ')' ||
+                                                                    CASE WHEN COALESCE(vt.IndVersaoAtual::int, 0) = 1 THEN ' (Estável)' ELSE '' END ||
+                                                                    ' - ' || tt.DescrTipoTecnologia || 
+                                                                    CASE WHEN COALESCE(t.indTecnologiaUltrapassada::int, 0) = 1 THEN ' (Tec.Ultrapassada)' ELSE '' END
+                                                                    AS TecnologiaVersaoTipo
+                                                                FROM
+                                                                    tecnologiasigla ts 
+                                                                    INNER JOIN versaotecnologia vt ON ts.IDVersaoTecnologia = vt.IDVersaoTecnologia
+                                                                    INNER JOIN tecnologia t ON vt.IDTecnologia = t.IDTecnologia
+                                                                    LEFT JOIN tipotecnologia tt ON t.IDTipoTecnologia = tt.IDTipoTecnologia;
+                                                                `
+                                                                .then(() => {
+                                                                    console.log("v_TecnologiasSiglas criada")
+
+                                                                    console.log("FIM")
+
+                                                                })
+                                                                .catch(error => {
+                                                                    console.error("Erro ao criar v_TecnologiasSiglas:", error);
+
+                                                                })
+
 
                                                                 // Create v_siglas
                                                                 sql`

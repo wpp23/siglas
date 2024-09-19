@@ -5,7 +5,7 @@ import Loading from '../components/Loading';
 import {AuthContext} from '../contexts/AuthContext';
 import requestWithToken from '../services/apiService';
 
-export default function SiglaTecnologiaList({title}) {
+export default function TecnologiaSiglaList({title}) {
 
   const navigate = useNavigate();
 
@@ -13,19 +13,19 @@ export default function SiglaTecnologiaList({title}) {
   const tituloLista = title;
 
   // Informe aqui a URL de consulta dos itens que serão listados no Grid.
-  const urlLista = "https://jsonplaceholder.typicode.com/posts"
+  const urlLista = "tecnologiasigla"
   
   // Informe aqui a rota que será usada para edição. Ex: https://localhost/funcionalidade1/id a rota será "funcionalidade1".
-  const rota = "siglatecnologia"
-  const tituloRota = "Siglas-Tecnologias"
+  const rota = "tecnologiasigla"
+  const tituloRota = "Tecnologias"
   const qtdeLinhasGrid = 5
   
   // Informe aqui os nomes dos títulos das colunas e tamanho no Grid.
   // O identificador (id) não precisa ser informado, mas precisa existir na lista de Itens.
   // O total de colunas é col-12, ou seja, a soma das colunas tem que dar 12. Exemplo: (col-3, col-6, col-3)
   const colunas = [
-    { titulo: 'ID', campo: 'id', tamanho: 'col-1', pesquisa: false  },
-    { titulo: 'Tecnologia', campo: 'title', tamanho: 'col-11', pesquisa: true  }
+    { titulo: 'ID', campo: 'idtecnologiasigla', tamanho: 'col-1', pesquisa: false  },
+    { titulo: 'Tipo Tecnologia Versão', campo: 'tipotecnologiaversao', tamanho: 'col-11', pesquisa: true  }
   ]
 
   // Informe aqui os botões (ações) que serão exibidos no GRID.
@@ -33,7 +33,7 @@ export default function SiglaTecnologiaList({title}) {
     { 
       label: 'Editar', 
       icone: 'fa-edit',
-      acao: (id) => navigate(`/SiglaTecnologia/${id}`)
+      acao: (id) => navigate(`/TecnologiaSigla/${id}`)
     }
   ];
    
@@ -91,6 +91,9 @@ export default function SiglaTecnologiaList({title}) {
                 //Verifica se o JSON possui o campo value - formato oData do Olinda.
                 SetItensLista(resposta.data.hasOwnProperty('value') ? resposta.data.value : resposta.data);
                 SetIsLoading(false);
+
+                console.log("resposta",resposta);
+
 
               })
               .catch(error => {

@@ -9,7 +9,7 @@ import OptionsMenu from '../components/OptionsMenu';
 import SelectGrid from '../components/SelectGrid';
 import ErrorDisplayField from '../components/ErrorDisplayField';
 import { formatDate } from '../components/DateUtils';
-import SiglaTecnologiaList from './SiglaTecnologiaList';
+import TecnologiaSiglaList from './TecnologiaSiglaList';
 
 interface SiglaData {
   sigla: string;
@@ -543,7 +543,7 @@ export default function SiglaEdit() {
 
               </br-tab-item>
               <br-tab-item title="Tecnologias" id="panel-1" aria-label="Tecnologias">
-                <SiglaTecnologiaList title={sigla}/>
+                <TecnologiaSiglaList title={sigla}/>
               </br-tab-item>
               <br-tab-item title="Gestor(es)" id="panel-2" aria-label="Gestor(es)"><p>Gestor(es)</p></br-tab-item>
               <br-tab-item title="Equipe Técnica" id="panel-3" aria-label="Equipe Técnica"><p>Equipe Técnica</p></br-tab-item>

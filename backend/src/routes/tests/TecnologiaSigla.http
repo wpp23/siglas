@@ -1,0 +1,39 @@
+Instale a extensão "REST Client" para executar as requisições abaixo:
+###
+
+
+
+GET http://localhost:3333/api/tecnologiaSigla/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3MjY0OTY5NTMsImV4cCI6MTcyNjUwMDU1M30.UWWcegJfKa6aBfbAW34gipjfvNKiU7yqqTssvN-m8LQ
+###
+
+GET http://localhost:3333/api/tecnologiaSigla/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3MjY0OTY5NTMsImV4cCI6MTcyNjUwMDU1M30.UWWcegJfKa6aBfbAW34gipjfvNKiU7yqqTssvN-m8LQ
+###
+
+POST http://localhost:3333/api/tecnologiaSigla/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3MjY0OTY5NTMsImV4cCI6MTcyNjUwMDU1M30.UWWcegJfKa6aBfbAW34gipjfvNKiU7yqqTssvN-m8LQ
+
+{
+    "idsigla": 1,
+    "idversaotecnologia": 104,
+    "idambientesigla": null
+}
+###
+
+PUT http://localhost:3333/api/tecnologiaSigla/35
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEsImlhdCI6MTcyMDE0MDc2NywiZXhwIjoxNzIwMTQ0MzY3fQ.mkV78HcH0iv3DMlglBIbMVbYCiHEONJhbJopawo4Yno
+
+{
+    "idsigla": 1,
+    "idversaotecnologia": 2,
+    "idambientesigla": 2
+}
+###
+
+DELETE http://localhost:3333/api/tecnologiaSigla/35
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEsImlhdCI6MTcyMDE0MDc2NywiZXhwIjoxNzIwMTQ0MzY3fQ.mkV78HcH0iv3DMlglBIbMVbYCiHEONJhbJopawo4Yno
+

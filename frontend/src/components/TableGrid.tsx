@@ -60,6 +60,7 @@ function exportToExcel(data: Item[]) {
 
 export default function TableGrid({ titulo, colunas, itens, acoes, rota, qtdeItensIni,}: Props): JSX.Element {
 
+  const navigate = useNavigate();
   const location = useLocation();
   const currentPath = location.pathname; 
 
@@ -128,7 +129,7 @@ export default function TableGrid({ titulo, colunas, itens, acoes, rota, qtdeIte
                   <div>
                   {sortedItems.length > 0 || searchString != ""? (
                     <div className="br-input input-highlight col-12 align-right">
-                      <input id="txtPesquisa" type="text" placeholder="Pesquisar" value={searchString} onChange={(e) => setSearchString(e.target.value)} />
+                      <input id="txtPesquisa" className="small" type="text" placeholder="Pesquisar" value={searchString} onChange={(e) => setSearchString(e.target.value)} />
                       <button className="br-button" type="button" aria-label="Pesquisar" title="Pesquisar" onClick={(e) => setSearchString("")}>
                         <i className={searchString === "" ? "fas fa-search" : "fas fa-eraser"} aria-hidden="true"></i>
                       </button>
@@ -138,9 +139,9 @@ export default function TableGrid({ titulo, colunas, itens, acoes, rota, qtdeIte
                 </div>
               </div>
               <div className="actions-trigger text-nowrap">
-                <div className="header-links dropdown">
+                <div className="header-links dropdown align">
                   <button
-                    className="br-button circle"
+                    className="br-button circle secondary"
                     type="button"
                     id="button-dropdown"
                     title="Ver opções"

@@ -17,7 +17,7 @@ const OptionsMenu: React.FC<OptionsMenuProps> = ({ id, onNewClick, onDeleteClick
     <div className="actions-trigger text-nowrap">
       <div className="header-links dropdown">
         <button
-          className="br-button circle"
+          className="br-button circle secondary"
           type="button"
           id="button-dropdown"
           title="Ver opções"

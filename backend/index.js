@@ -26,9 +26,6 @@ router.post('/api/authenticate', (req, res) => {
 
 app.use(router, routes);
 
-// Proteja as rotas com JWT
-//app.use(expressJwt.default({ secret: jwtSecret, algorithms: ['HS256'] }).unless({ path: ['/api/authenticate'] }));
-
 const PORT = process.env.PORT;
 
 const server = app.listen(PORT, () => {

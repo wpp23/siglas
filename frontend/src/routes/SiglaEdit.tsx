@@ -316,9 +316,30 @@ export default function SiglaEdit() {
               </ol>
             </nav>
           </div>
+
           <div className="row">
               <div className="col-sm-11 col-lg-11 mb-11">
                 &nbsp;
+              </div>
+              <div className="actions-trigger text-nowrap">
+                <div className="header-links dropdown align">
+                  <button
+                    className="br-button circle secondary"
+                    type="button"
+                    id="button-dropdown"
+                    title="Retornar a Lista"
+                    data-toggle="dropdown"
+                    data-target="target01-98928"
+                    aria-label="Retornar para a Lista"
+                    aria-haspopup="true"
+                    aria-live="polite"
+                    data-visible="true"
+                    tabIndex={0}
+                    onClick={()=>{navigate(rotaFront)}}
+                  >
+                    <i className="fas fa-chevron-left" aria-hidden="true"></i>
+                  </button>
+                </div>
               </div>
               <div className="col-sm-1 col-lg-1 mb-1">
                 <OptionsMenu
@@ -328,6 +349,7 @@ export default function SiglaEdit() {
                 />
               </div>
           </div>
+          
         </div>
 
         {isLoading ? (

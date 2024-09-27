@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import mainLogo from '../images/logo_govbr.png';
 import jsonData from '../menuItens.json'
@@ -11,9 +11,12 @@ export default function MenuFlutuante({ title }) {
     const navigate = useNavigate();
 
     //Verifica se está autenticado
-    if (!auth) {
-      navigate('/login');
-    }
+    useEffect(() => {
+
+      if (!auth) {
+        navigate('/login');
+      }
+    }, [auth]);
 
     // Create a ref to the menu container
     const menuContainerRef = useRef<HTMLDivElement>(null);

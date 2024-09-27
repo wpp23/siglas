@@ -7,6 +7,7 @@ import SituacaoSigla from "../controllers/SituacaoSiglaController.js";
 import Usuario from "../Controllers/UsuarioController.js";
 import TecnologiaSigla from "../Controllers/TecnologiaSiglaController.js";
 import VersaoTecnologia from "../Controllers/VersaoTecnologiaController.js";
+import AmbienteSigla from "../Controllers/AmbienteSiglaController.js"; // Importe o controlador
 
 
 const router = express.Router();
@@ -26,12 +27,12 @@ router.get("/api", (req, res)=>{
 router.post("/api/login", AuthController.login);
 
 //Rotas de Sigla
-router.get("/api/Sigla", AuthController.checkToken, Sigla.getAll);
-router.get("/api/Sigla?", AuthController.checkToken, Sigla.getByFilter);
-router.get("/api/Sigla/:id", AuthController.checkToken, Sigla.getById);
-router.post("/api/Sigla", AuthController.checkToken, Sigla.post);
-router.put("/api/Sigla/:id", AuthController.checkToken, Sigla.put);
-router.delete("/api/Sigla/:id", AuthController.checkToken, Sigla.del);
+router.get("/api/sigla", AuthController.checkToken, Sigla.getAll);
+router.get("/api/sigla?", AuthController.checkToken, Sigla.getByFilter);
+router.get("/api/sigla/:id", AuthController.checkToken, Sigla.getById);
+router.post("/api/sigla", AuthController.checkToken, Sigla.post);
+router.put("/api/sigla/:id", AuthController.checkToken, Sigla.put);
+router.delete("/api/sigla/:id", AuthController.checkToken, Sigla.del);
 
 //Rotas de AreaResponsavel
 router.get("/api/arearesponsavel", AuthController.checkToken, AreaResponsavel.getAll);
@@ -41,18 +42,18 @@ router.put("/api/arearesponsavel/:id", AuthController.checkToken, AreaResponsave
 router.delete("/api/arearesponsavel/:id", AuthController.checkToken, AreaResponsavel.del);
 
 //Rotas de TipoSigla
-router.get("/api/tipoSigla", TipoSigla.getAll);
-router.get("/api/tipoSigla/:id", TipoSigla.getById);
-router.post("/api/tipoSigla", TipoSigla.post);
-router.put("/api/tipoSigla/:id", TipoSigla.put);
-router.delete("/api/tipoSigla/:id", TipoSigla.del);
+router.get("/api/tiposigla", TipoSigla.getAll);
+router.get("/api/tiposigla/:id", TipoSigla.getById);
+router.post("/api/tiposigla", TipoSigla.post);
+router.put("/api/tiposigla/:id", TipoSigla.put);
+router.delete("/api/tiposigla/:id", TipoSigla.del);
 
 //Rotas de SituacaoSigla
-router.get("/api/situacaoSigla", SituacaoSigla.getAll);
-router.get("/api/situacaoSigla/:id", SituacaoSigla.getById);
-router.post("/api/situacaoSigla", SituacaoSigla.post);
-router.put("/api/situacaoSigla/:id", SituacaoSigla.put);
-router.delete("/api/situacaoSigla/:id", SituacaoSigla.del);
+router.get("/api/situacaosigla", SituacaoSigla.getAll);
+router.get("/api/situacaosigla/:id", SituacaoSigla.getById);
+router.post("/api/situacaosigla", SituacaoSigla.post);
+router.put("/api/situacaosigla/:id", SituacaoSigla.put);
+router.delete("/api/situacaosigla/:id", SituacaoSigla.del);
 
 //Rotas de seg_Usuarios
 router.get("/api/usuario", AuthController.checkToken, Usuario.getAll);
@@ -62,11 +63,11 @@ router.put("/api/usuario/:id", AuthController.checkToken, Usuario.put);
 router.delete("/api/usuario/:id", AuthController.checkToken, Usuario.del);
 
 //Rotas de TecnologiaSigla
-router.get("/api/tecnologiaSigla", AuthController.checkToken, TecnologiaSigla.getAll);
-router.get("/api/tecnologiaSigla/:id", AuthController.checkToken, TecnologiaSigla.getById);
-router.post("/api/tecnologiaSigla", AuthController.checkToken, TecnologiaSigla.post);
-router.put("/api/tecnologiaSigla/:id", AuthController.checkToken, TecnologiaSigla.put);
-router.delete("/api/tecnologiaSigla/:id", AuthController.checkToken, TecnologiaSigla.del);
+router.get("/api/tecnologiasigla", AuthController.checkToken, TecnologiaSigla.getAll);
+router.get("/api/tecnologiasigla/:id", AuthController.checkToken, TecnologiaSigla.getById);
+router.post("/api/tecnologiasigla", AuthController.checkToken, TecnologiaSigla.post);
+router.put("/api/tecnologiasigla/:id", AuthController.checkToken, TecnologiaSigla.put);
+router.delete("/api/tecnologiasigla/:id", AuthController.checkToken, TecnologiaSigla.del);
 
 //Rotas de VersaoTecnologia
 router.get("/api/versaotecnologia", AuthController.checkToken, VersaoTecnologia.getAll);
@@ -74,6 +75,13 @@ router.get("/api/versaotecnologia/:id", AuthController.checkToken, VersaoTecnolo
 router.post("/api/versaotecnologia", AuthController.checkToken, VersaoTecnologia.post);
 router.put("/api/versaotecnologia/:id", AuthController.checkToken, VersaoTecnologia.put);
 router.delete("/api/versaotecnologia/:id", AuthController.checkToken, VersaoTecnologia.del);
+
+// Rotas para AmbienteSigla
+router.get("/api/ambientesigla", AuthController.checkToken, AmbienteSigla.getAll);
+router.get("/api/ambientesigla/:id", AuthController.checkToken, AmbienteSigla.getById);
+router.post("/api/ambientesigla", AuthController.checkToken, AmbienteSigla.post);
+router.put("/api/ambientesigla/:id", AuthController.checkToken, AmbienteSigla.put);
+router.delete("/api/ambientesigla/:id", AuthController.checkToken, AmbienteSigla.del);
 
 
 export default router;

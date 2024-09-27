@@ -4,7 +4,7 @@ Instale a extensão "REST Client" para executar as requisições abaixo:
 
 
 GET http://localhost:3333/api/Sigla/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3MjYyNjMwODEsImV4cCI6MTcyNjI2NjY4MX0.KUA3YFF3V_gNr9JXTa_jF2pSbPWdnwP1h6yJjhA5Hzw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3Mjc0NjM0NDUsImV4cCI6MTcyNzQ2NzA0NX0.QtPHWyamjp_4wK4yNxHI9ZFNIrPdVB3rttdlJzzQbLA
 ###
 
 GET http://localhost:3333/api/Sigla/2

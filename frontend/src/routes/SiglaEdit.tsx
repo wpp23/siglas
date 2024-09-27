@@ -324,10 +324,10 @@ export default function SiglaEdit() {
               <div className="actions-trigger text-nowrap">
                 <div className="header-links dropdown align">
                   <button
-                    className="br-button circle secondary"
+                    className="br-button primary"
                     type="button"
                     id="button-dropdown"
-                    title="Retornar a Lista"
+                    title="Voltar para Lista"
                     data-toggle="dropdown"
                     data-target="target01-98928"
                     aria-label="Retornar para a Lista"
@@ -338,6 +338,7 @@ export default function SiglaEdit() {
                     onClick={()=>{navigate(rotaFront)}}
                   >
                     <i className="fas fa-chevron-left" aria-hidden="true"></i>
+                    Voltar
                   </button>
                 </div>
               </div>

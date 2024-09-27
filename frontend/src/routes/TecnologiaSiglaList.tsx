@@ -25,7 +25,10 @@ export default function TecnologiaSiglaList({title}) {
   // O total de colunas é col-12, ou seja, a soma das colunas tem que dar 12. Exemplo: (col-3, col-6, col-3)
   const colunas = [
     { titulo: 'ID', campo: 'idtecnologiasigla', tamanho: 'col-1', pesquisa: false  },
-    { titulo: 'Tipo Tecnologia Versão', campo: 'tipotecnologiaversao', tamanho: 'col-11', pesquisa: true  }
+    { titulo: 'Tipo Tecnologia', campo: 'descrtipotecnologia', tamanho: 'col-4', pesquisa: true  },
+    { titulo: 'Tecnologia-Versão', campo: 'tecnologiaversao', tamanho: 'col-4', pesquisa: true  },
+    { titulo: 'Versão Estável', campo: 'descrversaoatual', tamanho: 'col-4', pesquisa: true  },
+    { titulo: 'Ultrapassada', campo: 'descrtecultrapassada', tamanho: 'col-4', pesquisa: true  }
   ]
 
   // Informe aqui os botões (ações) que serão exibidos no GRID.
@@ -91,9 +94,6 @@ export default function TecnologiaSiglaList({title}) {
                 //Verifica se o JSON possui o campo value - formato oData do Olinda.
                 SetItensLista(resposta.data.hasOwnProperty('value') ? resposta.data.value : resposta.data);
                 SetIsLoading(false);
-
-                console.log("resposta",resposta);
-
 
               })
               .catch(error => {

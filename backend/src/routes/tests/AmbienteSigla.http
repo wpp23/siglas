@@ -1,0 +1,44 @@
+Instale a extensão "REST Client" para executar as requisições abaixo:
+###
+
+# Obter todos os Ambientes
+GET http://localhost:3333/api/ambientesigla
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3Mjc0Njg0NDQsImV4cCI6MTcyNzQ3MjA0NH0.7Sh19fztGLZEAhInA_CsHXRr24qsCHdStcROinX-oHQ
+
+###
+
+# Obter Ambiente por ID
+GET http://localhost:3333/api/ambientesigla/1 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZHVzZXIiOjEwLCJpYXQiOjE3Mjc0Njg0NDQsImV4cCI6MTcyNzQ3MjA0NH0.7Sh19fztGLZEAhInA_CsHXRr24qsCHdStcROinX-oHQ
+
+###
+
+# Criar novo Ambiente
+POST http://localhost:3333/api/ambientesigla
+Content-Type: application/json
+Authorization: Bearer SEU_TOKEN_DE_AUTENTICACAO
+
+{
+    "descrambientesigla": "Novo Ambiente",
+    "siglaambientesigla": "Namb",
+    "ordemambientesigla": "6"
+}
+
+###
+
+# Atualizar Ambiente
+PUT http://localhost:3333/api/ambientesigla/1 
+Content-Type: application/json
+Authorization: Bearer SEU_TOKEN_DE_AUTENTICACAO
+
+{
+    "descrambientesigla": "Ambiente Atualizado",
+    "siglaambientesigla": "Atamb",
+    "ordemambientesigla": "7"
+}
+
+###
+
+# Excluir Ambiente
+DELETE http://localhost:3333/api/ambientesigla/1 
+Authorization: Bearer SEU_TOKEN_DE_AUTENTICACAO

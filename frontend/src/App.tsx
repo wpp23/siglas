@@ -23,6 +23,7 @@ import UsuarioEdit from "./routes/usuarioEdit";
 import AreaResponsavelList from "./routes/AreaResponsavelList";
 import AreaResponsavelEdit from "./routes/AreaResponsavelEdit";
 import TecnologiaSiglaEdit from "./routes/TecnologiaSiglaEdit";
+import TecnologiaSiglaList from "./routes/TecnologiaSiglaList";
 
 export default function App() {
 
@@ -40,7 +41,10 @@ export default function App() {
           <Route path="*" element={<NotFound/>} />
             <Route path="Login" element={<Login title={title}/>} />
             <Route path="Sigla" element={<SiglaList />} />
-            <Route path="Sigla/:id" element={<SiglaEdit />} />
+            <Route path="Sigla/:id" element={<SiglaEdit />}>
+              <Route path="tecnologia" element={<TecnologiaSiglaList title={title} />} />
+            </Route>
+
             <Route path="TecnologiaSigla/:id" element={<TecnologiaSiglaEdit />} />
             <Route path="Usuario" element={<UsuarioList />} />
             <Route path="Usuario/:id" element={<UsuarioEdit />} />

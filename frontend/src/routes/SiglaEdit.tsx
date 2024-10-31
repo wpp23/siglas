@@ -544,13 +544,24 @@ export default function SiglaEdit() {
 
               </br-tab-item>
               <br-tab-item title="Tecnologias" id="panel-1" aria-label="Tecnologias">
-                <TecnologiaSiglaList title={sigla}/>
+                <Link to={`/sigla/${id}/tecnologia`}>Tecnologias</Link>
+                <Outlet /> 
               </br-tab-item>
-              <br-tab-item title="Gestor(es)" id="panel-2" aria-label="Gestor(es)"><p>Gestor(es)</p></br-tab-item>
-              <br-tab-item title="Equipe Técnica" id="panel-3" aria-label="Equipe Técnica"><p>Equipe Técnica</p></br-tab-item>
-              <br-tab-item title="URLs" id="panel-4" aria-label="URLs"><p>URLs</p></br-tab-item>
-              <br-tab-item title="Bancos de Dados" id="panel-5" aria-label="Bancos de Dados"><p>Bancos de Dados</p></br-tab-item>
-              <br-tab-item title="Baseline" id="panel-6" aria-label="Baseline"><p>Baseline</p></br-tab-item>
+              <br-tab-item title="Gestor(es)" id="panel-2" aria-label="Gestor(es)"><p>Gestor(es)</p>
+                <Outlet /> 
+              </br-tab-item>
+              <br-tab-item title="Equipe Técnica" id="panel-3" aria-label="Equipe Técnica"><p>Equipe Técnica</p>
+                <Outlet /> 
+              </br-tab-item>
+              <br-tab-item title="URLs" id="panel-4" aria-label="URLs"><p>URLs</p>
+                <Outlet /> 
+              </br-tab-item>
+              <br-tab-item title="Bancos de Dados" id="panel-5" aria-label="Bancos de Dados"><p>Bancos de Dados</p>
+                <Outlet /> 
+              </br-tab-item>
+              <br-tab-item title="Baseline" id="panel-6" aria-label="Baseline"><p>Baseline</p>
+                <Outlet /> 
+              </br-tab-item>
           </br-tab>
 
           </div>
